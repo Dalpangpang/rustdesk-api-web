@@ -138,7 +138,7 @@ export function useRepositories (api_type = 'my') {
   const submit = async () => {
     console.log(formData)
     if (!formData.color) {
-      ElMessage.error('请选择颜色')
+      ElMessage.error(T('PleaseSelectColor')) // remote-ops: 중국어 고정 문구를 번역 키로
       return
     }
     const api = formData.id ? apis[api_type].update : apis[api_type].create

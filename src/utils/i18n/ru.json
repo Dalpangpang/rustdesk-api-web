@@ -534,6 +534,18 @@
   },
   "Remark": {
     "One": "Примечание"
+  },
+  "NotImplemented": {
+    "One": "Пока не реализовано"
+  },
+  "IpSeparatorTip": {
+    "One": "Несколько IP разделяйте символом |"
+  },
+  "DeleteAllTip": {
+    "One": "Чтобы удалить всё, введите"
+  },
+  "PleaseSelectColor": {
+    "One": "Выберите цвет"
   }
 }
 

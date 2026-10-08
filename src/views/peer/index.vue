@@ -447,7 +447,7 @@
     return false
   }
   const toImport = () => {
-    ElMessage.warning('暂未实现')
+    ElMessage.warning(T('NotImplemented')) // remote-ops: 중국어 고정 문구를 번역 키로
   }
 
   const ABFormVisible = ref(false)

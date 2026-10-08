@@ -517,5 +517,17 @@
   },
   "Remark": {
     "One": "비고"
+  },
+  "NotImplemented": {
+    "One": "아직 지원하지 않는 기능입니다"
+  },
+  "IpSeparatorTip": {
+    "One": "IP 여러 개는 | 로 구분합니다"
+  },
+  "DeleteAllTip": {
+    "One": "전부 지우려면 입력:"
+  },
+  "PleaseSelectColor": {
+    "One": "색상을 선택하세요"
   }
 }

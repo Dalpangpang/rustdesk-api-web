@@ -6,7 +6,7 @@
         <el-option v-for="c in collectionListRes.list" :key="c.id" :label="c.name" :value="c.id"></el-option>
       </el-select>
       <div class="aside-tags">
-        <div class="top" style="width: 100%">标签</div>
+        <div class="top" style="width: 100%">{{ T('Tags') }}</div>
         <div v-for="t in tagListRes.list"
              :key="t.id" class="tag"
              :class="{checked: checkedTags.includes(t.name)}"

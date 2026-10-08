@@ -534,5 +534,17 @@
   },
   "Remark": {
     "One": "Remarque"
+  },
+  "NotImplemented": {
+    "One": "Pas encore implémenté"
+  },
+  "IpSeparatorTip": {
+    "One": "Séparez plusieurs IP par |"
+  },
+  "DeleteAllTip": {
+    "One": "Pour tout supprimer, saisissez"
+  },
+  "PleaseSelectColor": {
+    "One": "Veuillez choisir une couleur"
   }
 }

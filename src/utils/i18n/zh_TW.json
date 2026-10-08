@@ -547,5 +547,17 @@
   },
   "Remark": {
     "One": "備註"
+  },
+  "NotImplemented": {
+    "One": "暫未實現"
+  },
+  "IpSeparatorTip": {
+    "One": "多個IP以 | 分隔"
+  },
+  "DeleteAllTip": {
+    "One": "全部刪除請填"
+  },
+  "PleaseSelectColor": {
+    "One": "請選擇顏色"
   }
 }

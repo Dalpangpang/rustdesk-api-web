@@ -559,5 +559,35 @@
   },
   "PleaseSelectColor": {
     "One": "请选择颜色"
+  },
+  "RoAdmin": {
+    "One": "管理员"
+  },
+  "RoNormalUser": {
+    "One": "普通用户"
+  },
+  "RoEnabled": {
+    "One": "启用"
+  },
+  "RoDisabled": {
+    "One": "禁用"
+  },
+  "RoCmdRelayServers": {
+    "One": "中继服务器"
+  },
+  "RoCmdAlwaysUseRelay": {
+    "One": "始终使用中继"
+  },
+  "RoCmdMustLogin": {
+    "One": "必须登录"
+  },
+  "RoCmdUsage": {
+    "One": "使用情况"
+  },
+  "RoCmdBlocklist": {
+    "One": "阻止列表"
+  },
+  "RoCmdBlacklist": {
+    "One": "黑名单"
   }
 }

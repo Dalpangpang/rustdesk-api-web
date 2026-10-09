@@ -543,5 +543,35 @@
   },
   "PleaseSelectColor": {
     "One": "Seleccione un color"
+  },
+  "RoAdmin": {
+    "One": "Administrador"
+  },
+  "RoNormalUser": {
+    "One": "Usuario estándar"
+  },
+  "RoEnabled": {
+    "One": "Habilitado"
+  },
+  "RoDisabled": {
+    "One": "Deshabilitado"
+  },
+  "RoCmdRelayServers": {
+    "One": "Servidores de retransmisión"
+  },
+  "RoCmdAlwaysUseRelay": {
+    "One": "Usar siempre retransmisión"
+  },
+  "RoCmdMustLogin": {
+    "One": "Inicio de sesión obligatorio"
+  },
+  "RoCmdUsage": {
+    "One": "Uso"
+  },
+  "RoCmdBlocklist": {
+    "One": "Lista de bloqueo"
+  },
+  "RoCmdBlacklist": {
+    "One": "Lista negra"
   }
 }

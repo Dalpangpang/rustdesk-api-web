@@ -1,5 +1,7 @@
 <template>
   <div>
+    <!-- remote-ops: 환영 문구를 위쪽 띠로 옮기고, 비어 있으면 숨긴다 -->
+    <div v-if="html" class="hello" v-html="html"></div>
     <el-card :title="T('Userinfo')" shadow="hover">
       <el-form class="info-form" ref="form" label-width="120px" label-suffix=":">
         <el-form-item :label="T('Username')">
@@ -9,7 +11,7 @@
           <div>{{ userStore.email }}</div>
         </el-form-item>
         <el-form-item :label="T('Password')" prop="password">
-          <el-button type="danger" @click="showChangePwd">{{ T('ChangePassword') }}</el-button>
+          <el-button @click="showChangePwd">{{ T('ChangePassword') }}</el-button>
         </el-form-item>
         <el-form-item label="OIDC">
           <el-table :data="oidcData" border fit>
@@ -29,9 +31,6 @@
           </el-table>
         </el-form-item>
       </el-form>
-    </el-card>
-    <el-card shadow="hover" style="margin-top: 20px">
-      <div v-html="html"></div>
     </el-card>
     <changePwdDialog v-model:visible="changePwdVisible"></changePwdDialog>
   </div>
@@ -93,7 +92,36 @@
 <style scoped lang="scss">
 .info-form {
   width: 600px;
+  max-width: 100%;
   margin: 0 auto;
 
+}
+
+/* remote-ops: 환영 문구 띠 */
+.hello {
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  background: var(--ro-accent-weak);
+  color: var(--el-text-color-regular);
+
+  :deep(h1), :deep(h2), :deep(h3) {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--el-text-color-primary);
+  }
+
+  :deep(p) {
+    margin: 4px 0 0;
+  }
+
+  :deep(small) {
+    color: var(--el-text-color-secondary);
+  }
+
+  :deep(a) {
+    color: var(--el-color-primary);
+  }
 }
 </style>

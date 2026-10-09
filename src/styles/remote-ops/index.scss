@@ -1,0 +1,413 @@
+// remote-ops 관리 화면 테마(ADR 0005 보완, 2026-10-09). 기능은 바꾸지 않고 보이는 모양만 바꾼다.
+// 원본 파일 수정을 줄이려고 색·글꼴·공통 모양은 이 파일에서 Element Plus 변수와 공통 클래스
+// (.list-query / .list-body / .list-page, 레이아웃 클래스)로 맞춘다. main.js 에서 원본 스타일 뒤에 불러온다.
+@use 'sass:color';
+
+$accent: #2C55C9;
+$accent-d: #7D99F2;
+$ok: #17845A;
+$ok-d: #4CC08D;
+$warn: #B7791F;
+$warn-d: #E0AA3E;
+$danger: #C53B3B;
+$danger-d: #EE7676;
+$info: #64748B;
+$info-d: #94A3B8;
+$white: #FFFFFF;
+$black: #000000;
+$bg-d: #151C25;
+$ink-d: #0E131A;
+
+// Element Plus 는 hover·active 색을 -light-N / -dark-2 변수로 쓴다. 밝은 모드는 흰색과, 어두운 모드는 바탕색과 섞는다(원본 방식)
+@mixin el-palette($name, $c, $mix-light, $mix-dark) {
+  --el-color-#{$name}: #{$c};
+  @each $n in (3, 5, 7, 8, 9) {
+    --el-color-#{$name}-light-#{$n}: #{color.mix($mix-light, $c, $n * 10%)};
+  }
+  --el-color-#{$name}-dark-2: #{color.mix($mix-dark, $c, 20%)};
+}
+
+:root {
+  --ro-font: "IBM Plex Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --ro-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+  --ro-accent: #{$accent};
+  --ro-accent-weak: #{color.mix($white, $accent, 90%)};
+  --ro-accent-ink: #{$white};
+  --ro-bg: #F3F5F8;
+  --ro-surface: #FFFFFF;
+  --ro-surface-2: #EDF1F6;
+  --ro-line: #DCE2EA;
+  --ro-fg: #16202B;
+  --ro-fg-2: #526073;
+  --ro-fg-3: #7F8EA1;
+  --ro-radius: 6px;
+  --ro-radius-card: 10px;
+  --ro-scrim: rgba(12, 18, 26, 0.45);
+
+  @include el-palette(primary, $accent, $white, $black);
+  @include el-palette(success, $ok, $white, $black);
+  @include el-palette(warning, $warn, $white, $black);
+  @include el-palette(danger, $danger, $white, $black);
+  @include el-palette(error, $danger, $white, $black);
+  @include el-palette(info, $info, $white, $black);
+
+  --el-bg-color: #FFFFFF;
+  --el-bg-color-page: #F3F5F8;
+  --el-bg-color-overlay: #FFFFFF;
+  --el-text-color-primary: #16202B;
+  --el-text-color-regular: #364152;
+  --el-text-color-secondary: #5F6C7E;
+  --el-text-color-placeholder: #8E9AAB;
+  --el-text-color-disabled: #B4BECB;
+  --el-border-color: #DCE2EA;
+  --el-border-color-light: #E3E8EF;
+  --el-border-color-lighter: #EBEFF4;
+  --el-border-color-extra-light: #F2F5F8;
+  --el-border-color-dark: #CDD5DF;
+  --el-border-color-darker: #BAC4D1;
+  --el-fill-color: #EDF1F6;
+  --el-fill-color-light: #F3F5F8;
+  --el-fill-color-lighter: #F7F9FB;
+  --el-fill-color-extra-light: #FAFBFC;
+  --el-fill-color-dark: #E4E9F0;
+  --el-fill-color-darker: #DCE2EA;
+  --el-fill-color-blank: #FFFFFF;
+  --el-border-radius-base: 6px;
+  --el-border-radius-small: 4px;
+  --el-border-radius-round: 20px;
+  --el-font-family: var(--ro-font);
+  --el-box-shadow: 0 12px 32px rgba(15, 23, 35, 0.12), 0 2px 6px rgba(15, 23, 35, 0.06);
+  --el-box-shadow-light: 0 1px 2px rgba(15, 23, 35, 0.05), 0 6px 16px rgba(15, 23, 35, 0.06);
+  --el-box-shadow-lighter: 0 1px 2px rgba(15, 23, 35, 0.05);
+  --el-box-shadow-dark: 0 16px 48px rgba(15, 23, 35, 0.18);
+  --el-mask-color: rgba(255, 255, 255, 0.8);
+  --el-overlay-color-lighter: rgba(12, 18, 26, 0.45);
+}
+
+html.dark {
+  --ro-accent: #{$accent-d};
+  --ro-accent-weak: #{color.mix($bg-d, $accent-d, 80%)};
+  --ro-accent-ink: #{$ink-d};
+  --ro-bg: #0E131A;
+  --ro-surface: #151C25;
+  --ro-surface-2: #1C2531;
+  --ro-line: #2A3544;
+  --ro-fg: #E4E9F0;
+  --ro-fg-2: #A2AEBE;
+  --ro-fg-3: #748193;
+  --ro-scrim: rgba(0, 0, 0, 0.6);
+
+  @include el-palette(primary, $accent-d, $bg-d, $white);
+  @include el-palette(success, $ok-d, $bg-d, $white);
+  @include el-palette(warning, $warn-d, $bg-d, $white);
+  @include el-palette(danger, $danger-d, $bg-d, $white);
+  @include el-palette(error, $danger-d, $bg-d, $white);
+  @include el-palette(info, $info-d, $bg-d, $white);
+
+  --el-bg-color: #151C25;
+  --el-bg-color-page: #0E131A;
+  --el-bg-color-overlay: #1C2531;
+  --el-text-color-primary: #E4E9F0;
+  --el-text-color-regular: #C5CEDA;
+  --el-text-color-secondary: #A2AEBE;
+  --el-text-color-placeholder: #748193;
+  --el-text-color-disabled: #56616F;
+  --el-border-color: #2A3544;
+  --el-border-color-light: #253040;
+  --el-border-color-lighter: #212B38;
+  --el-border-color-extra-light: #1C2531;
+  --el-border-color-dark: #34404F;
+  --el-border-color-darker: #3F4C5D;
+  --el-fill-color: #1C2531;
+  --el-fill-color-light: #19212B;
+  --el-fill-color-lighter: #161E28;
+  --el-fill-color-extra-light: #141A23;
+  --el-fill-color-dark: #222C39;
+  --el-fill-color-darker: #283342;
+  --el-fill-color-blank: #151C25;
+  --el-box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --el-box-shadow-light: 0 1px 2px rgba(0, 0, 0, 0.35), 0 6px 16px rgba(0, 0, 0, 0.25);
+  --el-box-shadow-lighter: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --el-mask-color: rgba(0, 0, 0, 0.6);
+  --el-overlay-color-lighter: rgba(0, 0, 0, 0.6);
+
+  // 밝은 강조색 위 흰 글자는 잘 안 보여 채운 버튼·현재 쪽 번호의 글자를 어둡게 한다
+  .el-button--primary,
+  .el-button--success,
+  .el-button--warning,
+  .el-button--danger,
+  .el-button--info {
+    --el-button-text-color: #{$ink-d};
+    --el-button-hover-text-color: #{$ink-d};
+    --el-button-active-text-color: #{$ink-d};
+    --el-button-disabled-text-color: #{$ink-d};
+  }
+  .el-pagination.is-background .el-pager li.is-active { color: #{$ink-d}; }
+}
+
+// ---------------- 바탕·글꼴 ----------------
+html,
+body {
+  background: var(--el-bg-color-page);
+}
+body {
+  font-family: var(--ro-font);
+  color: var(--el-text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  // 한글은 단어(띄어쓰기) 단위로 줄바꿈한다('생성 시 / 간' 같은 끊김 방지). 긴 영문·숫자는 넘치지 않게 끊는다
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+code,
+.ro-mono {
+  font-family: var(--ro-mono);
+}
+
+// ---------------- 공통 부품 ----------------
+.el-button {
+  font-weight: 500;
+}
+.el-card {
+  --el-card-border-radius: var(--ro-radius-card);
+  --el-card-border-color: var(--el-border-color-light);
+  --el-card-padding: 18px;
+}
+.el-card.is-hover-shadow:hover,
+.el-card.is-always-shadow {
+  box-shadow: var(--el-box-shadow-lighter);
+}
+.el-dialog {
+  --el-dialog-border-radius: 12px;
+  --el-dialog-padding-primary: 20px;
+  max-width: calc(100vw - 24px);
+}
+.el-dialog__title {
+  font-weight: 600;
+  font-size: 17px;
+}
+.el-message-box {
+  --el-messagebox-border-radius: 12px;
+}
+.el-tag {
+  --el-tag-border-radius: 999px;
+}
+.el-table {
+  --el-table-header-bg-color: var(--el-fill-color);
+  --el-table-header-text-color: var(--el-text-color-secondary);
+  --el-table-row-hover-bg-color: var(--el-color-primary-light-9);
+  --el-table-border-color: var(--el-border-color-lighter);
+  --el-table-text-color: var(--el-text-color-primary);
+  --el-table-fixed-left-column: inset 10px 0 10px -10px rgba(15, 23, 35, 0.08);
+  --el-table-fixed-right-column: inset -10px 0 10px -10px rgba(15, 23, 35, 0.08);
+  font-size: 13px;
+  th.el-table__cell {
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+.el-pagination.is-background {
+  .btn-prev,
+  .btn-next,
+  .el-pager li {
+    border: 1px solid var(--el-border-color-light);
+    background-color: var(--el-fill-color-blank);
+    border-radius: var(--ro-radius);
+  }
+  .el-pager li.is-active {
+    border-color: var(--el-color-primary);
+    background-color: var(--el-color-primary);
+  }
+}
+
+// ---------------- 목록 화면(필터 · 표 · 페이지 이동) ----------------
+// 원본은 카드 3개로 나뉜다. 한 장처럼 이어 붙이고, 필터 라벨은 입력란 위로 올려 한글 라벨이 줄바꿈되지 않게 한다
+.app-main {
+  .list-query,
+  .list-body,
+  .list-page {
+    box-shadow: none !important;
+  }
+  .list-query {
+    margin: 0;
+    border-radius: var(--ro-radius-card) var(--ro-radius-card) 0 0;
+    > .el-card__body {
+      padding: 16px 18px 6px;
+    }
+  }
+  .list-body {
+    margin: 0 !important;
+    border-top: 0;
+    border-radius: 0;
+    > .el-card__body {
+      padding: 12px 18px 16px;
+    }
+    &:last-child {
+      border-radius: 0 0 var(--ro-radius-card) var(--ro-radius-card);
+    }
+  }
+  .list-page {
+    margin: 0;
+    border-top: 0;
+    border-radius: 0 0 var(--ro-radius-card) var(--ro-radius-card);
+    > .el-card__body {
+      padding: 12px 18px;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+  .list-query .el-form--inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 0 16px;
+    .el-form-item {
+      margin: 0 0 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .el-form-item__label {
+      width: auto !important;
+      height: auto;
+      justify-content: flex-start;
+      padding: 0 0 6px;
+      line-height: 18px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--el-text-color-secondary);
+    }
+    .el-form-item__content {
+      margin-left: 0 !important;
+      flex-wrap: wrap;
+      gap: 8px 0;
+    }
+  }
+
+  // 버튼 색의 뜻: 주 동작만 채운 색, 위험 동작은 빨간 테두리, 나머지는 보조(흰 바탕) 버튼
+  .list-query {
+    .el-button--success,
+    .el-button--info,
+    .el-button--warning {
+      --el-button-text-color: var(--el-text-color-regular);
+      --el-button-bg-color: var(--el-fill-color-blank);
+      --el-button-border-color: var(--el-border-color);
+      --el-button-hover-text-color: var(--el-color-primary);
+      --el-button-hover-bg-color: var(--el-color-primary-light-9);
+      --el-button-hover-border-color: var(--el-color-primary-light-7);
+      --el-button-active-text-color: var(--el-color-primary);
+      --el-button-active-bg-color: var(--el-color-primary-light-8);
+      --el-button-active-border-color: var(--el-color-primary);
+      --el-button-disabled-text-color: var(--el-text-color-disabled);
+      --el-button-disabled-bg-color: var(--el-fill-color-light);
+      --el-button-disabled-border-color: var(--el-border-color-light);
+    }
+    .el-button--danger:not(.is-plain):not(.is-link):not(.is-text) {
+      --el-button-text-color: var(--el-color-danger);
+      --el-button-bg-color: var(--el-color-danger-light-9);
+      --el-button-border-color: var(--el-color-danger-light-5);
+      --el-button-hover-text-color: var(--el-color-white);
+      --el-button-hover-bg-color: var(--el-color-danger);
+      --el-button-hover-border-color: var(--el-color-danger);
+      --el-button-active-text-color: var(--el-color-white);
+      --el-button-active-bg-color: var(--el-color-danger-dark-2);
+      --el-button-active-border-color: var(--el-color-danger-dark-2);
+    }
+  }
+
+  // 표 안의 행 버튼은 글자 버튼으로 줄인다(삭제는 빨강, 주의는 주황)
+  .el-table .el-button:not(.is-circle) {
+    --el-button-bg-color: transparent;
+    --el-button-border-color: transparent;
+    --el-button-text-color: var(--el-color-primary);
+    --el-button-hover-bg-color: var(--el-color-primary-light-9);
+    --el-button-hover-border-color: transparent;
+    --el-button-hover-text-color: var(--el-color-primary);
+    --el-button-active-bg-color: var(--el-color-primary-light-8);
+    --el-button-active-border-color: transparent;
+    --el-button-active-text-color: var(--el-color-primary);
+    --el-button-disabled-bg-color: transparent;
+    --el-button-disabled-border-color: transparent;
+    --el-button-disabled-text-color: var(--el-text-color-disabled);
+    padding: 5px 8px;
+    &.el-button--danger {
+      --el-button-text-color: var(--el-color-danger);
+      --el-button-hover-text-color: var(--el-color-danger);
+      --el-button-active-text-color: var(--el-color-danger);
+      --el-button-hover-bg-color: var(--el-color-danger-light-9);
+      --el-button-active-bg-color: var(--el-color-danger-light-8);
+    }
+    &.el-button--warning {
+      --el-button-text-color: var(--el-color-warning);
+      --el-button-hover-text-color: var(--el-color-warning);
+      --el-button-active-text-color: var(--el-color-warning);
+      --el-button-hover-bg-color: var(--el-color-warning-light-9);
+      --el-button-active-bg-color: var(--el-color-warning-light-8);
+    }
+  }
+
+  // 세로 칸막이와 바깥 테두리를 없앤 가로줄 표(border 속성을 쓴 표도 같은 모양)
+  .el-table--border {
+    .el-table__cell {
+      border-right-color: transparent;
+    }
+    &::before,
+    &::after,
+    .el-table__inner-wrapper::before,
+    .el-table__inner-wrapper::after,
+    .el-table__border-left-patch {
+      background-color: transparent;
+    }
+  }
+}
+
+// ---------------- 좁은 화면(휴대폰) ----------------
+@media (max-width: 768px) {
+  .app-main {
+    .list-query .el-form--inline {
+      .el-form-item {
+        width: 100%;
+      }
+      .el-input,
+      .el-select,
+      .el-date-editor {
+        --el-input-width: 100%;
+        --el-select-width: 100%;
+        --el-date-editor-width: 100%;
+        width: 100%;
+      }
+    }
+    .list-query > .el-card__body,
+    .list-body > .el-card__body,
+    .list-page > .el-card__body {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .list-page > .el-card__body {
+      justify-content: flex-start;
+      overflow-x: auto;
+    }
+    // 고정 열(작업)이 좁은 화면을 다 덮지 않게 고정을 풀고 표 전체를 가로로 스크롤한다
+    .el-table .el-table-fixed-column--left,
+    .el-table .el-table-fixed-column--right {
+      position: static !important;
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+  // 대화상자 입력 폼은 라벨을 입력란 위로
+  .el-dialog {
+    --el-dialog-margin-top: 6vh;
+    .el-form-item {
+      flex-wrap: wrap;
+    }
+    .el-form-item__label {
+      width: 100% !important;
+      justify-content: flex-start;
+    }
+    .el-form-item__content {
+      margin-left: 0 !important;
+    }
+  }
+}

@@ -24,12 +24,16 @@
         <el-switch v-model="form.is_admin"
                    :active-value="true"
                    :inactive-value="false"
+                   :active-text="T('RoAdmin')"
+                   :inactive-text="T('RoNormalUser')"
         ></el-switch>
       </el-form-item>
       <el-form-item :label="T('Status')" prop="status">
         <el-switch v-model="form.status"
                    :active-value="ENABLE_STATUS"
                    :inactive-value="DISABLE_STATUS"
+                   :active-text="T('RoEnabled')"
+                   :inactive-text="T('RoDisabled')"
         ></el-switch>
       </el-form-item>
       <el-form-item :label="T('Remark')" prop="remark">
@@ -58,5 +62,30 @@
 
 <style lang="scss" scoped>
 .form-card {
+  /* remote-ops: 입력 폼이 화면 끝까지 늘어나지 않게 카드로 */
+  max-width: 680px;
+  padding: 24px 24px 6px;
+  background: var(--el-bg-color);
+  border: 1px solid var(--el-border-color-light);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .form-card {
+    padding: 16px 12px 2px;
+
+    :deep(.el-form-item) {
+      flex-wrap: wrap;
+    }
+
+    :deep(.el-form-item__label) {
+      width: 100% !important;
+      justify-content: flex-start;
+    }
+
+    :deep(.el-form-item__content) {
+      margin-left: 0 !important;
+    }
+  }
 }
 </style>

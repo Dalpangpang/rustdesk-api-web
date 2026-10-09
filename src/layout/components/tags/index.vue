@@ -74,8 +74,25 @@
 <style lang="scss" scoped>
 
 .tag {
-  border-radius: 0;
+  // remote-ops: 둥근 칩. 현재 탭은 옅은 강조색, 나머지는 테두리만
+  flex: none;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
   cursor: pointer;
+
+  &.el-tag--dark.el-tag--primary {
+    --el-tag-bg-color: var(--el-color-primary-light-9);
+    --el-tag-border-color: transparent;
+    --el-tag-text-color: var(--el-color-primary);
+    font-weight: 600;
+  }
+
+  &.el-tag--plain.el-tag--info {
+    --el-tag-bg-color: transparent;
+    --el-tag-border-color: var(--el-border-color);
+    --el-tag-text-color: var(--el-text-color-secondary);
+  }
 
   &.active {
   }

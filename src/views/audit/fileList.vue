@@ -9,9 +9,9 @@
           <el-input v-model="listQuery.from_peer" clearable></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="handlerQuery">{{ T('Filter') }}</el-button>
+          <el-button @click="handlerQuery">{{ T('Filter') }}</el-button>
           <el-button type="danger" @click="toBatchDelete">{{ T('BatchDelete') }}</el-button>
-          <el-button type="success" @click="toExport">{{ T('Export') }}</el-button>
+          <el-button @click="toExport">{{ T('Export') }}</el-button>
         </el-form-item>
       </el-form>
     </el-card>
@@ -90,7 +90,7 @@
           </template>
         </el-table-column>
       </el-table>
-      <el-button @click="allFilesVisible=false" style="margin-top: 20px;width: 100%" type="primary">{{ T('Close') }}</el-button>
+      <el-button @click="allFilesVisible=false" style="margin-top: 20px;width: 100%">{{ T('Close') }}</el-button>
     </el-dialog>
   </div>
 </template>

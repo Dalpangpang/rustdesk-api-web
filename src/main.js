@@ -9,6 +9,8 @@ import { pinia } from '@/store'
 import '@/permission'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import '@/styles/style.scss'
+import '@/styles/remote-ops/fonts' // remote-ops: 관리 화면 글꼴(IBM Plex, OFL)
+import '@/styles/remote-ops/index.scss' // remote-ops: 관리 화면 테마(ADR 0005 보완)
 import * as ElementIcons from '@element-plus/icons'
 
 const app = createApp(App)

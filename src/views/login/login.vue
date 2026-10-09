@@ -169,23 +169,28 @@
 </script>
 
 <style scoped lang="scss">
+/* remote-ops: 밝은 바탕의 로그인 카드(화면 구조는 원본 그대로, 색은 테마 변수) */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #2d3a4b;
+  min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
+  background-color: var(--el-bg-color-page);
+  background-image: radial-gradient(circle at 15% 10%, var(--ro-accent-weak), transparent 45%);
 }
 
 .login-card {
-  width: 360px;
-  background-color: #283342;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 380px;
+  max-width: 100%;
+  background-color: var(--el-bg-color);
+  padding: 36px 36px 28px;
+  border: 1px solid var(--el-border-color-light);
+  border-radius: 14px;
+  box-shadow: var(--el-box-shadow-light);
   text-align: center;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -195,7 +200,8 @@ h1 {
 }
 
 .login-form {
-  margin-bottom: 20px;
+  margin-bottom: 8px;
+  text-align: left;
 }
 
 .login-input {
@@ -216,23 +222,23 @@ h1 {
 .login-button {
   width: 100%;
   height: 40px;
-  margin-bottom: 20px;
+  margin: 4px 0 8px;
   margin-left: 0;
 }
 
 .divider {
   display: flex;
   align-items: center;
-  margin: 20px 0;
-  font-size: 14px;
-  color: #888;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--el-text-color-secondary);
 
   &::before,
   &::after {
     content: '';
     flex: 1;
     height: 1px;
-    background-color: #ddd;
+    background-color: var(--el-border-color);
   }
 
   &::before {
@@ -256,42 +262,32 @@ h1 {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  height: 50px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  color: black;
+  height: 44px;
+  background-color: var(--el-bg-color);
+  border: 1px solid var(--el-border-color);
+  border-radius: 8px;
+  color: var(--el-text-color-primary);
   font-size: 14px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .oidc-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
 }
 
 .login-logo {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto 20px;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
   display: block;
+  border-radius: 14px;
 }
 
 .el-form-item {
   ::v-deep(.el-form-item__label) {
-    color: #fff;
-  }
-
-  .el-input {
-    ::v-deep(.el-input__wrapper) {
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: transparent;
-    }
-
-    ::v-deep(input) {
-      color: #fff;
-    }
+    color: var(--el-text-color-regular);
+    font-weight: 500;
   }
 }
 </style>

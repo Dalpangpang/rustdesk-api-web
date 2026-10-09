@@ -2,7 +2,7 @@
   <el-card class="simple-card" shadow="hover" v-loading="form.loading">
     <template #header>
       <div class="card-header">
-        <span>USAGE</span>
+        <span>{{ T('RoCmdUsage') }}</span> <code class="cmd-key">USAGE</code>
       </div>
     </template>
     <el-form :disabled="!canSend">
@@ -59,4 +59,9 @@
 .simple-card{
   width: 500px;
 }
+</style>
+
+<style scoped>
+/* remote-ops: 설정 키는 작게 옆에 */
+.cmd-key { margin-left: 6px; font-size: 11px; color: var(--el-text-color-secondary); }
 </style>

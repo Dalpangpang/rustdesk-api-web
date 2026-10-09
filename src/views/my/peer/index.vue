@@ -20,10 +20,10 @@
           </el-select>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="handlerQuery">{{ T('Filter') }}</el-button>
-          <el-button type="success" @click="toExport">{{ T('Export') }}</el-button>
+          <el-button @click="handlerQuery">{{ T('Filter') }}</el-button>
+          <el-button @click="toExport">{{ T('Export') }}</el-button>
           <!--          <el-button type="danger" @click="toBatchDelete">{{ T('BatchDelete') }}</el-button>-->
-          <el-button type="primary" @click="toBatchAddToAB">{{ T('BatchAddToAB') }}</el-button>
+          <el-button @click="toBatchAddToAB">{{ T('BatchAddToAB') }}</el-button>
 
         </el-form-item>
       </el-form>

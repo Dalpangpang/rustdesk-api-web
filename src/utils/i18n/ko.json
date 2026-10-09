@@ -87,16 +87,16 @@
     "One": "삭제"
   },
   "Create": {
-    "One": "생성"
+    "One": "추가"
   },
   "Update": {
-    "One": "업데이트"
+    "One": "수정"
   },
   "LoginName": {
     "One": "로그인 이름"
   },
   "Submit": {
-    "One": "제출"
+    "One": "저장"
   },
   "OperationSuccess": {
     "One": "작업 성공"
@@ -195,7 +195,7 @@
     "One": "영어로 변경"
   },
   "My": {
-    "One": "내"
+    "One": "내 항목"
   },
   "Info": {
     "One": "정보"
@@ -327,7 +327,7 @@
     "One": "키 과다 사용"
   },
   "Link": {
-    "One": "링크"
+    "One": "연결"
   },
   "CopySuccess": {
     "One": "복사 성공"
@@ -529,5 +529,68 @@
   },
   "PleaseSelectColor": {
     "One": "색상을 선택하세요"
+  },
+  "RoAdmin": {
+    "One": "관리자"
+  },
+  "RoNormalUser": {
+    "One": "일반 사용자"
+  },
+  "RoEnabled": {
+    "One": "사용"
+  },
+  "RoDisabled": {
+    "One": "중지"
+  },
+  "RoCmdRelayServers": {
+    "One": "중계 서버"
+  },
+  "RoCmdAlwaysUseRelay": {
+    "One": "항상 중계 사용"
+  },
+  "RoCmdMustLogin": {
+    "One": "로그인 필수"
+  },
+  "RoCmdUsage": {
+    "One": "사용량"
+  },
+  "RoCmdBlocklist": {
+    "One": "차단 목록"
+  },
+  "RoCmdBlacklist": {
+    "One": "블랙리스트"
+  },
+  "AddressBookCollection": {
+    "One": "주소록 이름"
+  },
+  "DeviceGroupManage": {
+    "One": "장치 그룹 관리"
+  },
+  "Email": {
+    "One": "이메일"
+  },
+  "Import": {
+    "One": "가져오기"
+  },
+  "Information": {
+    "One": "정보"
+  },
+  "Token": {
+    "One": "토큰"
+  },
+  "View": {
+    "One": "보기"
+  },
+  "or login in with": {
+    "One": "또는 다음으로 로그인"
+  },
+  "Check your IdP docs, without": {
+    "One": "IdP 문서를 확인하세요. 다음 부분은 빼고 입력:"
+  },
+  "Optional, default is": {
+    "One": "선택 사항, 기본값:"
+  },
+  "For OIDC login without a password, enter any 4-20 letters": {
+    "One": "OIDC 로그인만 쓰는 계정이면 아무 글자 4~20자를 입력하세요"
   }
 }

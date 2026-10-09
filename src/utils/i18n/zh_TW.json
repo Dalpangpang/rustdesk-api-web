@@ -559,5 +559,35 @@
   },
   "PleaseSelectColor": {
     "One": "請選擇顏色"
+  },
+  "RoAdmin": {
+    "One": "管理員"
+  },
+  "RoNormalUser": {
+    "One": "一般使用者"
+  },
+  "RoEnabled": {
+    "One": "啟用"
+  },
+  "RoDisabled": {
+    "One": "停用"
+  },
+  "RoCmdRelayServers": {
+    "One": "中繼伺服器"
+  },
+  "RoCmdAlwaysUseRelay": {
+    "One": "一律使用中繼"
+  },
+  "RoCmdMustLogin": {
+    "One": "必須登入"
+  },
+  "RoCmdUsage": {
+    "One": "使用情況"
+  },
+  "RoCmdBlocklist": {
+    "One": "封鎖清單"
+  },
+  "RoCmdBlacklist": {
+    "One": "黑名單"
   }
 }

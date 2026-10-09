@@ -2,7 +2,7 @@
   <el-card class="simple-card" shadow="hover" v-loading="form.loading">
     <template #header>
       <div class="card-header">
-        <span>BLOCK_LIST</span>
+        <span>{{ T('RoCmdBlocklist') }}</span> <code class="cmd-key">BLOCK_LIST</code>
       </div>
     </template>
     <el-form :disabled="!canSend">
@@ -90,4 +90,9 @@
 </script>
 <style scoped lang="scss">
 
+</style>
+
+<style scoped>
+/* remote-ops: 설정 키는 작게 옆에 */
+.cmd-key { margin-left: 6px; font-size: 11px; color: var(--el-text-color-secondary); }
 </style>

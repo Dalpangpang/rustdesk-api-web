@@ -546,6 +546,36 @@
   },
   "PleaseSelectColor": {
     "One": "Выберите цвет"
+  },
+  "RoAdmin": {
+    "One": "Администратор"
+  },
+  "RoNormalUser": {
+    "One": "Обычный пользователь"
+  },
+  "RoEnabled": {
+    "One": "Включено"
+  },
+  "RoDisabled": {
+    "One": "Отключено"
+  },
+  "RoCmdRelayServers": {
+    "One": "Серверы ретрансляции"
+  },
+  "RoCmdAlwaysUseRelay": {
+    "One": "Всегда через ретранслятор"
+  },
+  "RoCmdMustLogin": {
+    "One": "Обязательный вход"
+  },
+  "RoCmdUsage": {
+    "One": "Использование"
+  },
+  "RoCmdBlocklist": {
+    "One": "Список блокировки"
+  },
+  "RoCmdBlacklist": {
+    "One": "Чёрный список"
   }
 }
 

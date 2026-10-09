@@ -543,5 +543,56 @@
   },
   "PleaseSelectColor": {
     "One": "Please select a color"
+  },
+  "RoAdmin": {
+    "One": "Admin"
+  },
+  "RoNormalUser": {
+    "One": "Standard user"
+  },
+  "RoEnabled": {
+    "One": "Enabled"
+  },
+  "RoDisabled": {
+    "One": "Disabled"
+  },
+  "RoCmdRelayServers": {
+    "One": "Relay servers"
+  },
+  "RoCmdAlwaysUseRelay": {
+    "One": "Always use relay"
+  },
+  "RoCmdMustLogin": {
+    "One": "Login required"
+  },
+  "RoCmdUsage": {
+    "One": "Usage"
+  },
+  "RoCmdBlocklist": {
+    "One": "Block list"
+  },
+  "RoCmdBlacklist": {
+    "One": "Blacklist"
+  },
+  "AddressBookCollection": {
+    "One": "Address Book Name"
+  },
+  "MyPeer": {
+    "One": "My Peers"
+  },
+  "Import": {
+    "One": "Import"
+  },
+  "Information": {
+    "One": "Information"
+  },
+  "Token": {
+    "One": "Token"
+  },
+  "View": {
+    "One": "View"
+  },
+  "Email": {
+    "One": "Email"
   }
 }
